@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjogIuqzqO2UhOuGgOydtCDsobDtjrjshLEiLCAic2hvcnRfbmFtZSI6ICLqs6jtlITrhoDsnbQiLCAiZGVzY3JpcHRpb24iOiAi7Iqk7YGs66aw6rOo7ZSEIOyhsO2OuOyEsSDslbEiLCAic3RhcnRfdXJsIjogIi4iLCAiZGlzcGxheSI6ICJzdGFuZGFsb25lIiwgImJhY2tncm91bmRfY29sb3IiOiAiIzFhM2EyYSIsICJ0aGVtZV9jb2xvciI6ICIjMWEzYTJhIiwgIm9yaWVudGF0aW9uIjogInBvcnRyYWl0IiwgImljb25zIjogW3sic3JjIjogImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjRiV3h1Y3owaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNQzl6ZG1jaUlIWnBaWGRDYjNnOUlqQWdNQ0ExTVRJZ05URXlJajRLSUNBOGNtVmpkQ0IzYVdSMGFEMGlOVEV5SWlCb1pXbG5hSFE5SWpVeE1pSWdjbmc5SWpFd01DSWdabWxzYkQwaUl6RmhNMkV5WVNJdlBnb2dJRHh5WldOMElIZzlJak13SWlCNVBTSXpNQ0lnZDJsa2RHZzlJalExTWlJZ2FHVnBaMmgwUFNJME5USWlJSEo0UFNJNE1DSWdabWxzYkQwaUl6SmtOV0V6WkNJdlBnb2dJRHdoTFMwZ1JteGhaeUJ3YjJ4bElDMHRQZ29nSUR4eVpXTjBJSGc5SWpFMk1DSWdlVDBpT0RBaUlIZHBaSFJvUFNJeE5DSWdhR1ZwWjJoMFBTSXlPREFpSUhKNFBTSTNJaUJtYVd4c1BTSWpZemxoT0RSaklpOCtDaUFnUENFdExTQkdiR0ZuSUMwdFBnb2dJRHh3YjJ4NVoyOXVJSEJ2YVc1MGN6MGlNVGMwTERnd0lERTNOQ3d4TmpBZ01qZ3dMREV5TUNJZ1ptbHNiRDBpSTJNNVlUZzBZeUl2UGdvZ0lEd2hMUzBnUjI5c1ppQmlZV3hzSUMwdFBnb2dJRHhqYVhKamJHVWdZM2c5SWpNeE1DSWdZM2s5SWpNNE1DSWdjajBpT0RBaUlHWnBiR3c5SW5kb2FYUmxJaTgrQ2lBZ1BHTnBjbU5zWlNCamVEMGlNekV3SWlCamVUMGlNemd3SWlCeVBTSTRNQ0lnWm1sc2JEMGlibTl1WlNJZ2MzUnliMnRsUFNJalpUQmxNR1V3SWlCemRISnZhMlV0ZDJsa2RHZzlJaklpTHo0S0lDQThJUzB0SUVScGJYQnNaWE1nTFMwK0NpQWdQR05wY21Oc1pTQmplRDBpTWprd0lpQmplVDBpTXpVMUlpQnlQU0k0SWlCbWFXeHNQU0lqWkdSa0lpOCtDaUFnUEdOcGNtTnNaU0JqZUQwaU16TXdJaUJqZVQwaU16VTFJaUJ5UFNJNElpQm1hV3hzUFNJalpHUmtJaTgrQ2lBZ1BHTnBjbU5zWlNCamVEMGlNamN3SWlCamVUMGlNemcxSWlCeVBTSTRJaUJtYVd4c1BTSWpaR1JrSWk4K0NpQWdQR05wY21Oc1pTQmplRDBpTXpFd0lpQmplVDBpTXpnMUlpQnlQU0k0SWlCbWFXeHNQU0lqWkdSa0lpOCtDaUFnUEdOcGNtTnNaU0JqZUQwaU16VXdJaUJqZVQwaU16ZzFJaUJ5UFNJNElpQm1hV3hzUFNJalpHUmtJaTgrQ2lBZ1BHTnBjbU5zWlNCamVEMGlNamt3SWlCamVUMGlOREUxSWlCeVBTSTRJaUJtYVd4c1BTSWpaR1JrSWk4K0NpQWdQR05wY21Oc1pTQmplRDBpTXpNd0lpQmplVDBpTkRFMUlpQnlQU0k0SWlCbWFXeHNQU0lqWkdSa0lpOCtDand2YzNablBnPT0iLCAic2l6ZXMiOiAiMTkyeDE5MiIsICJ0eXBlIjogImltYWdlL3N2Zyt4bWwifSwgeyJzcmMiOiAiZGF0YTppbWFnZS9zdmcreG1sO2Jhc2U2NCxQSE4yWnlCNGJXeHVjejBpYUhSMGNEb3ZMM2QzZHk1M015NXZjbWN2TWpBd01DOXpkbWNpSUhacFpYZENiM2c5SWpBZ01DQTFNVElnTlRFeUlqNEtJQ0E4Y21WamRDQjNhV1IwYUQwaU5URXlJaUJvWldsbmFIUTlJalV4TWlJZ2NuZzlJakV3TUNJZ1ptbHNiRDBpSXpGaE0yRXlZU0l2UGdvZ0lEeHlaV04wSUhnOUlqTXdJaUI1UFNJek1DSWdkMmxrZEdnOUlqUTFNaUlnYUdWcFoyaDBQU0kwTlRJaUlISjRQU0k0TUNJZ1ptbHNiRDBpSXpKa05XRXpaQ0l2UGdvZ0lEd2hMUzBnUm14aFp5QndiMnhsSUMwdFBnb2dJRHh5WldOMElIZzlJakUyTUNJZ2VUMGlPREFpSUhkcFpIUm9QU0l4TkNJZ2FHVnBaMmgwUFNJeU9EQWlJSEo0UFNJM0lpQm1hV3hzUFNJall6bGhPRFJqSWk4K0NpQWdQQ0V0TFNCR2JHRm5JQzB0UGdvZ0lEeHdiMng1WjI5dUlIQnZhVzUwY3owaU1UYzBMRGd3SURFM05Dd3hOakFnTWpnd0xERXlNQ0lnWm1sc2JEMGlJMk01WVRnMFl5SXZQZ29nSUR3aExTMGdSMjlzWmlCaVlXeHNJQzB0UGdvZ0lEeGphWEpqYkdVZ1kzZzlJak14TUNJZ1kzazlJak00TUNJZ2NqMGlPREFpSUdacGJHdzlJbmRvYVhSbElpOCtDaUFnUEdOcGNtTnNaU0JqZUQwaU16RXdJaUJqZVQwaU16Z3dJaUJ5UFNJNE1DSWdabWxzYkQwaWJtOXVaU0lnYzNSeWIydGxQU0lqWlRCbE1HVXdJaUJ6ZEhKdmEyVXRkMmxrZEdnOUlqSWlMejRLSUNBOElTMHRJRVJwYlhCc1pYTWdMUzArQ2lBZ1BHTnBjbU5zWlNCamVEMGlNamt3SWlCamVUMGlNelUxSWlCeVBTSTRJaUJtYVd4c1BTSWpaR1JrSWk4K0NpQWdQR05wY21Oc1pTQmplRDBpTXpNd0lpQmplVDBpTXpVMUlpQnlQU0k0SWlCbWFXeHNQU0lqWkdSa0lpOCtDaUFnUEdOcGNtTnNaU0JqZUQwaU1qY3dJaUJqZVQwaU16ZzFJaUJ5UFNJNElpQm1hV3hzUFNJalpHUmtJaTgrQ2lBZ1BHTnBjbU5zWlNCamVEMGlNekV3SWlCamVUMGlNemcxSWlCeVBTSTRJaUJtYVd4c1BTSWpaR1JrSWk4K0NpQWdQR05wY21Oc1pTQmplRDBpTXpVd0lpQmplVDBpTXpnMUlpQnlQU0k0SWlCbWFXeHNQU0lqWkdSa0lpOCtDaUFnUEdOcGNtTnNaU0JqZUQwaU1qa3dJaUJqZVQwaU5ERTFJaUJ5UFNJNElpQm1hV3hzUFNJalpHUmtJaTgrQ2lBZ1BHTnBjbU5zWlNCamVEMGlNek13SWlCamVUMGlOREUxSWlCeVBTSTRJaUJtYVd4c1BTSWpaR1JrSWk4K0Nqd3ZjM1puUGc9PSIsICJzaXplcyI6ICI1MTJ4NTEyIiwgInR5cGUiOiAiaW1hZ2Uvc3ZnK3htbCJ9XX0=">
+  <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KICA8cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjEwMCIgZmlsbD0iIzFhM2EyYSIvPgogIDxyZWN0IHg9IjMwIiB5PSIzMCIgd2lkdGg9IjQ1MiIgaGVpZ2h0PSI0NTIiIHJ4PSI4MCIgZmlsbD0iIzJkNWEzZCIvPgogIDwhLS0gRmxhZyBwb2xlIC0tPgogIDxyZWN0IHg9IjE2MCIgeT0iODAiIHdpZHRoPSIxNCIgaGVpZ2h0PSIyODAiIHJ4PSI3IiBmaWxsPSIjYzlhODRjIi8+CiAgPCEtLSBGbGFnIC0tPgogIDxwb2x5Z29uIHBvaW50cz0iMTc0LDgwIDE3NCwxNjAgMjgwLDEyMCIgZmlsbD0iI2M5YTg0YyIvPgogIDwhLS0gR29sZiBiYWxsIC0tPgogIDxjaXJjbGUgY3g9IjMxMCIgY3k9IjM4MCIgcj0iODAiIGZpbGw9IndoaXRlIi8+CiAgPGNpcmNsZSBjeD0iMzEwIiBjeT0iMzgwIiByPSI4MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZTBlMGUwIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8IS0tIERpbXBsZXMgLS0+CiAgPGNpcmNsZSBjeD0iMjkwIiBjeT0iMzU1IiByPSI4IiBmaWxsPSIjZGRkIi8+CiAgPGNpcmNsZSBjeD0iMzMwIiBjeT0iMzU1IiByPSI4IiBmaWxsPSIjZGRkIi8+CiAgPGNpcmNsZSBjeD0iMjcwIiBjeT0iMzg1IiByPSI4IiBmaWxsPSIjZGRkIi8+CiAgPGNpcmNsZSBjeD0iMzEwIiBjeT0iMzg1IiByPSI4IiBmaWxsPSIjZGRkIi8+CiAgPGNpcmNsZSBjeD0iMzUwIiBjeT0iMzg1IiByPSI4IiBmaWxsPSIjZGRkIi8+CiAgPGNpcmNsZSBjeD0iMjkwIiBjeT0iNDE1IiByPSI4IiBmaWxsPSIjZGRkIi8+CiAgPGNpcmNsZSBjeD0iMzMwIiBjeT0iNDE1IiByPSI4IiBmaWxsPSIjZGRkIi8+Cjwvc3ZnPg==">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="골프놀이">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#1a3a2a">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>골프놀이 · 조편성</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Bebas+Neue&display=swap');
+
+  :root {
+    --green-deep: #1a3a2a;
+    --green-mid: #2d5a3d;
+    --green-grass: #3d7a52;
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --cream: #f5f0e8;
+    --white: #ffffff;
+    --text-dark: #1a1a1a;
+    --text-mid: #4a4a4a;
+    --text-muted: #888;
+    --card-bg: #ffffff;
+    --shadow: 0 4px 20px rgba(26,58,42,0.12);
+    --shadow-lg: 0 8px 40px rgba(26,58,42,0.18);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: var(--green-deep);
+    min-height: 100vh;
+    color: var(--text-dark);
+  }
+
+  /* 배경 패턴 - 페어웨이 질감 */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: 
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 80px,
+        rgba(255,255,255,0.015) 80px,
+        rgba(255,255,255,0.015) 81px
+      ),
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 80px,
+        rgba(255,255,255,0.015) 80px,
+        rgba(255,255,255,0.015) 81px
+      );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .app {
+    position: relative;
+    z-index: 1;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 16px 60px;
+  }
+
+  /* 헤더 */
+  .header {
+    text-align: center;
+    padding: 40px 0 28px;
+  }
+  .header-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--green-deep);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  .header h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 52px;
+    letter-spacing: 4px;
+    color: var(--white);
+    line-height: 1;
+  }
+  .header h1 span { color: var(--gold); }
+  .header-sub {
+    margin-top: 8px;
+    color: rgba(255,255,255,0.5);
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+
+  /* 탭 */
+  .tabs {
+    display: flex;
+    background: rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 5px;
+    margin-bottom: 24px;
+    gap: 4px;
+  }
+  .tab {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    color: rgba(255,255,255,0.5);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .tab.active {
+    background: var(--gold);
+    color: var(--green-deep);
+    font-weight: 700;
+  }
+
+  /* 카드 */
+  .card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 24px;
+    margin-bottom: 16px;
+    box-shadow: var(--shadow);
+  }
+  .card-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--green-mid);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-title::before {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 14px;
+    background: var(--gold);
+    border-radius: 2px;
+  }
+
+  /* 방 설정 그리드 */
+  .rooms-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .room-item {
+    background: var(--cream);
+    border-radius: 14px;
+    padding: 14px;
+    position: relative;
+  }
+  .room-item label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+  .room-item input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-dark);
+    outline: none;
+  }
+  .room-item input::placeholder { color: #ccc; }
+
+  .room-item .capacity-ctrl {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .room-item .cap-btn {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    border: 2px solid var(--green-grass);
+    background: transparent;
+    color: var(--green-grass);
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s;
+    line-height: 1;
+  }
+  .room-item .cap-btn:hover {
+    background: var(--green-grass);
+    color: white;
+  }
+  .room-item .cap-num {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--green-mid);
+    min-width: 24px;
+    text-align: center;
+  }
+
+  .room-delete {
+    position: absolute;
+    top: 10px; right: 10px;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    border: none;
+    background: #f0e0e0;
+    color: #c44;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s;
+  }
+  .room-delete:hover { background: #c44; color: white; }
+
+  .add-room-btn {
+    width: 100%;
+    padding: 12px;
+    border: 2px dashed rgba(61,122,82,0.3);
+    border-radius: 14px;
+    background: transparent;
+    color: var(--green-grass);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .add-room-btn:hover {
+    border-color: var(--green-grass);
+    background: rgba(61,122,82,0.05);
+  }
+
+  /* 참가자 */
+  .participants-area {
+    position: relative;
+  }
+  .participants-textarea {
+    width: 100%;
+    min-height: 140px;
+    border: 2px solid #eee;
+    border-radius: 14px;
+    padding: 14px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    line-height: 1.8;
+    resize: vertical;
+    outline: none;
+    color: var(--text-dark);
+    transition: border-color 0.2s;
+  }
+  .participants-textarea:focus { border-color: var(--green-grass); }
+  .participants-hint {
+    margin-top: 8px;
+    font-size: 11px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .participant-count {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--green-deep);
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-top: 10px;
+  }
+
+  /* 옵션 */
+  .options-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .option-chip {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 30px;
+    border: 2px solid #eee;
+    background: transparent;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-mid);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .option-chip.active {
+    border-color: var(--green-grass);
+    background: rgba(61,122,82,0.08);
+    color: var(--green-mid);
+  }
+  .option-chip input { display: none; }
+
+  /* 배정 버튼 */
+  .assign-btn {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(135deg, var(--green-mid), var(--green-grass));
+    border: none;
+    border-radius: 18px;
+    color: white;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+    box-shadow: 0 6px 20px rgba(45,90,61,0.4);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+  .assign-btn::before {
+    content: '⛳';
+    margin-right: 10px;
+    font-size: 18px;
+  }
+  .assign-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(45,90,61,0.5);
+  }
+  .assign-btn:active { transform: translateY(0); }
+
+  /* 결과 화면 */
+  .result-header {
+    text-align: center;
+    padding: 20px 0 24px;
+  }
+  .result-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 38px;
+    letter-spacing: 3px;
+    color: var(--white);
+  }
+  .result-title span { color: var(--gold); }
+  .result-date {
+    color: rgba(255,255,255,0.4);
+    font-size: 12px;
+    margin-top: 4px;
+  }
+
+  .result-room-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    margin-bottom: 14px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .result-room-header {
+    background: linear-gradient(135deg, var(--green-deep), var(--green-mid));
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .result-room-name {
+    font-weight: 700;
+    color: white;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .result-room-badge {
+    background: var(--gold);
+    color: var(--green-deep);
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+  .result-room-count {
+    color: rgba(255,255,255,0.6);
+    font-size: 13px;
+  }
+  .result-players {
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .result-player {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .player-num {
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    background: var(--cream);
+    color: var(--green-mid);
+    font-size: 12px;
+    font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .player-name {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-dark);
+  }
+  .player-host {
+    font-size: 10px;
+    background: var(--gold-light);
+    color: var(--green-deep);
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 700;
+    margin-left: auto;
+  }
+
+  /* 공유 버튼들 */
+  .share-bar {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+  }
+  .share-btn {
+    flex: 1;
+    padding: 14px;
+    border-radius: 14px;
+    border: none;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.5px;
+  }
+  .share-btn.copy {
+    background: var(--gold);
+    color: var(--green-deep);
+  }
+  .share-btn.copy:hover { background: var(--gold-light); }
+  .share-btn.kakao {
+    background: #FEE500;
+    color: #3C1E1E;
+  }
+  .share-btn.kakao:hover { filter: brightness(1.05); }
+  .share-btn.reset {
+    background: rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.7);
+  }
+  .share-btn.reset:hover { background: rgba(255,255,255,0.15); }
+
+  /* 토스트 */
+  .toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--green-deep);
+    color: var(--gold);
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    opacity: 0;
+    transition: all 0.3s;
+    pointer-events: none;
+    z-index: 999;
+    border: 1px solid var(--gold);
+    white-space: nowrap;
+  }
+  .toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* 미리보기 공유 텍스트 */
+  .share-preview {
+    background: var(--green-deep);
+    border-radius: 14px;
+    padding: 16px;
+    margin-top: 14px;
+    border: 1px solid rgba(201,168,76,0.3);
+  }
+  .share-preview-title {
+    font-size: 11px;
+    color: var(--gold);
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  .share-preview-text {
+    font-family: monospace;
+    font-size: 12px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.8;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: rgba(255,255,255,0.3);
+  }
+  .empty-state .icon { font-size: 48px; margin-bottom: 12px; }
+  .empty-state p { font-size: 14px; }
+
+  .screen-setup { display: block; }
+  .screen-result { display: none; }
+  .screen-result.visible { display: block; }
+  .screen-setup.hidden { display: none; }
+
+  @media (max-width: 480px) {
+    .header h1 { font-size: 40px; }
+    .rooms-grid { grid-template-columns: 1fr; }
+    .share-bar { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- 헤더 -->
+  <div class="header">
+    <div class="header-badge">당근모임</div>
+    <h1>골프<span>놀이</span></h1>
+    <div class="header-sub">스크린골프 조편성 시스템</div>
+  </div>
+
+  <!-- 탭 -->
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('setup')">⚙️ 조편성 설정</button>
+    <button class="tab" id="tab-result" onclick="switchTab('result')">📋 배정 결과</button>
+  </div>
+
+  <!-- 설정 화면 -->
+  <div class="screen-setup" id="screen-setup">
+
+    <!-- 방 설정 -->
+    <div class="card">
+      <div class="card-title">방 설정</div>
+      <div class="rooms-grid" id="rooms-grid"></div>
+      <button class="add-room-btn" onclick="addRoom()">＋ 방 추가</button>
+    </div>
+
+    <!-- 참가자 -->
+    <div class="card">
+      <div class="card-title">참가자 명단</div>
+      <div class="participants-area">
+        <textarea
+          class="participants-textarea"
+          id="participants-input"
+          placeholder="참가자 이름을 입력하세요&#10;이름 사이에 쉼표(,), 슬래시(/), 줄바꿈 모두 사용 가능&#10;&#10;예) 홍길동, 김철수, 이영희&#10;또는 한 줄에 한 명씩"
+          oninput="updateParticipantCount()"
+        ></textarea>
+        <div class="participants-hint">💡 쉼표, 슬래시(/), 줄바꿈으로 구분</div>
+        <div id="participant-count-badge" style="display:none;" class="participant-count">
+          <span>👤</span>
+          <span id="participant-count-num">0</span>명 입력됨
+        </div>
+      </div>
+    </div>
+
+    <!-- 옵션 -->
+    <div class="card">
+      <div class="card-title">배정 옵션</div>
+      <div class="options-row">
+        <label class="option-chip active" id="opt-shuffle" onclick="toggleOption('shuffle')">
+          🔀 랜덤 배정
+        </label>
+        <label class="option-chip" id="opt-host" onclick="toggleOption('host')">
+          🏌️ 방장 표시
+        </label>
+        <label class="option-chip" id="opt-balance" onclick="toggleOption('balance')">
+          ⚖️ 균등 배분
+        </label>
+      </div>
+    </div>
+
+    <!-- 배정 버튼 -->
+    <button class="assign-btn" onclick="assignRooms()">방 배정하기</button>
+
+  </div>
+
+  <!-- 결과 화면 -->
+  <div class="screen-result" id="screen-result">
+    <div class="result-header">
+      <div class="result-title">배정 <span>완료</span></div>
+      <div class="result-date" id="result-date"></div>
+    </div>
+    <div id="result-rooms"></div>
+    <div class="share-preview" id="share-preview" style="display:none;">
+      <div class="share-preview-title">📋 공유 텍스트 미리보기</div>
+      <div class="share-preview-text" id="share-text-preview"></div>
+    </div>
+    <div class="share-bar">
+      <button class="share-btn copy" onclick="copyResult()">📋 결과 복사</button>
+      <button class="share-btn kakao" onclick="shareKakao()">💬 카카오 공유</button>
+    </div>
+    <div class="share-bar" style="margin-top:0;">
+      <button class="share-btn reset" onclick="resetAll()">↩ 처음부터</button>
+    </div>
+  </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  // 상태
+  let rooms = [];
+  let options = { shuffle: true, host: false, balance: false };
+  let assignedResult = null;
+
+  // 초기 방 설정
+  function init() {
+    rooms = [
+      { id: 1, name: '1번 방', capacity: 4 },
+      { id: 2, name: '2번 방', capacity: 4 },
+    ];
+    renderRooms();
+  }
+
+  function renderRooms() {
+    const grid = document.getElementById('rooms-grid');
+    grid.innerHTML = rooms.map((r, i) => `
+      <div class="room-item" id="room-${r.id}">
+        ${rooms.length > 1 ? `<button class="room-delete" onclick="deleteRoom(${r.id})">✕</button>` : ''}
+        <label>방 이름</label>
+        <input type="text" value="${r.name}" oninput="updateRoom(${r.id}, 'name', this.value)" placeholder="방 이름" style="margin-bottom:10px;">
+        <label>최대 인원</label>
+        <div class="capacity-ctrl">
+          <button class="cap-btn" onclick="changeCapacity(${r.id}, -1)">−</button>
+          <span class="cap-num" id="cap-${r.id}">${r.capacity}</span>
+          <button class="cap-btn" onclick="changeCapacity(${r.id}, 1)">＋</button>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function addRoom() {
+    const id = Date.now();
+    rooms.push({ id, name: `${rooms.length + 1}번 방`, capacity: 4 });
+    renderRooms();
+  }
+
+  function deleteRoom(id) {
+    rooms = rooms.filter(r => r.id !== id);
+    renderRooms();
+  }
+
+  function updateRoom(id, key, val) {
+    const room = rooms.find(r => r.id === id);
+    if (room) room[key] = val;
+  }
+
+  function changeCapacity(id, delta) {
+    const room = rooms.find(r => r.id === id);
+    if (!room) return;
+    room.capacity = Math.max(1, Math.min(8, room.capacity + delta));
+    document.getElementById(`cap-${id}`).textContent = room.capacity;
+  }
+
+  function parseParticipants() {
+    const raw = document.getElementById('participants-input').value;
+    return raw
+      .split(/[,\/\n]+/)
+      .map(s => s.trim())
+      .filter(s => s.length > 0);
+  }
+
+  function updateParticipantCount() {
+    const participants = parseParticipants();
+    const badge = document.getElementById('participant-count-badge');
+    const num = document.getElementById('participant-count-num');
+    if (participants.length > 0) {
+      badge.style.display = 'inline-flex';
+      num.textContent = participants.length;
+    } else {
+      badge.style.display = 'none';
+    }
+  }
+
+  function toggleOption(key) {
+    options[key] = !options[key];
+    const el = document.getElementById(`opt-${key}`);
+    el.classList.toggle('active', options[key]);
+  }
+
+  function assignRooms() {
+    const participants = parseParticipants();
+    if (participants.length === 0) {
+      showToast('⚠️ 참가자를 입력해주세요!');
+      return;
+    }
+    if (rooms.length === 0) {
+      showToast('⚠️ 방을 추가해주세요!');
+      return;
+    }
+
+    // 방 이름 동기화
+    rooms.forEach(r => {
+      const input = document.querySelector(`#room-${r.id} input`);
+      if (input) r.name = input.value || r.name;
+    });
+
+    let list = [...participants];
+
+    // 랜덤 셔플
+    if (options.shuffle) {
+      for (let i = list.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [list[i], list[j]] = [list[j], list[i]];
+      }
+    }
+
+    // 균등 배분: 방별 인원을 자동 조정
+    let result = rooms.map(r => ({ ...r, players: [] }));
+
+    if (options.balance) {
+      const perRoom = Math.floor(list.length / rooms.length);
+      const remainder = list.length % rooms.length;
+      let idx = 0;
+      result.forEach((room, i) => {
+        const count = perRoom + (i < remainder ? 1 : 0);
+        room.players = list.slice(idx, idx + count);
+        idx += count;
+      });
+    } else {
+      // 정원 순서대로 배정
+      let idx = 0;
+      for (const room of result) {
+        room.players = list.slice(idx, idx + room.capacity);
+        idx += room.capacity;
+        if (idx >= list.length) break;
+      }
+      // 넘치는 인원 처리: 마지막 방에 추가
+      if (idx < list.length) {
+        result[result.length - 1].players.push(...list.slice(idx));
+      }
+    }
+
+    assignedResult = result;
+    renderResult(result);
+    switchTab('result');
+    showToast('🎉 배정 완료!');
+  }
+
+  function renderResult(result) {
+    const now = new Date();
+    document.getElementById('result-date').textContent =
+      `${now.getFullYear()}. ${now.getMonth()+1}. ${now.getDate()} · ${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}`;
+
+    const container = document.getElementById('result-rooms');
+    container.innerHTML = result.map((room, ri) => `
+      <div class="result-room-card">
+        <div class="result-room-header">
+          <div class="result-room-name">
+            ⛳ ${room.name}
+            <span class="result-room-badge">ROOM ${ri + 1}</span>
+          </div>
+          <div class="result-room-count">${room.players.length}명</div>
+        </div>
+        <div class="result-players">
+          ${room.players.length === 0
+            ? '<div style="color:#aaa;font-size:13px;">배정된 참가자 없음</div>'
+            : room.players.map((p, i) => `
+              <div class="result-player">
+                <div class="player-num">${i + 1}</div>
+                <div class="player-name">${p}</div>
+                ${options.host && i === 0 ? '<span class="player-host">방장</span>' : ''}
+              </div>
+            `).join('')}
+        </div>
+      </div>
+    `).join('');
+
+    // 공유 텍스트 생성
+    const shareText = buildShareText(result, now);
+    document.getElementById('share-text-preview').textContent = shareText;
+    document.getElementById('share-preview').style.display = 'block';
+  }
+
+  function buildShareText(result, now) {
+    const nowStr = now
+      ? `${now.getFullYear()}.${now.getMonth()+1}.${now.getDate()} ${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}`
+      : '';
+    let text = `⛳ 골프놀이 스크린골프 조편성\n`;
+    if (nowStr) text += `📅 ${nowStr}\n`;
+    text += `${'─'.repeat(22)}\n`;
+    result.forEach((room, ri) => {
+      text += `\n🏌️ ${room.name} (${room.players.length}명)\n`;
+      room.players.forEach((p, i) => {
+        const isHost = options.host && i === 0;
+        text += `  ${i + 1}. ${p}${isHost ? ' 👑' : ''}\n`;
+      });
+    });
+    text += `\n${'─'.repeat(22)}\n`;
+    text += `즐거운 라운딩 되세요! 🏌️‍♂️`;
+    return text;
+  }
+
+  function copyResult() {
+    if (!assignedResult) return;
+    const text = buildShareText(assignedResult, null);
+    navigator.clipboard.writeText(text).then(() => {
+      showToast('📋 클립보드에 복사됐어요!');
+    }).catch(() => {
+      // 폴백
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      showToast('📋 복사 완료!');
+    });
+  }
+
+  function shareKakao() {
+    if (!assignedResult) return;
+    const text = buildShareText(assignedResult, new Date());
+    // 카카오톡 공유 (URL scheme)
+    const kakaoUrl = `kakaotalk://send?text=${encodeURIComponent(text)}`;
+    // 모바일에서는 카카오톡 앱으로 연결 시도
+    const a = document.createElement('a');
+    a.href = kakaoUrl;
+    a.click();
+    // 잠시 후 클립보드 복사로 폴백
+    setTimeout(() => {
+      copyResult();
+      showToast('💬 카카오톡으로 공유하거나 복사해서 붙여넣기 하세요!');
+    }, 500);
+  }
+
+  function resetAll() {
+    switchTab('setup');
+    assignedResult = null;
+    document.getElementById('result-rooms').innerHTML = '';
+    document.getElementById('share-preview').style.display = 'none';
+  }
+
+  function switchTab(tab) {
+    const setup = document.getElementById('screen-setup');
+    const result = document.getElementById('screen-result');
+    const tabs = document.querySelectorAll('.tab');
+
+    if (tab === 'setup') {
+      setup.classList.remove('hidden');
+      result.classList.remove('visible');
+      tabs[0].classList.add('active');
+      tabs[1].classList.remove('active');
+    } else {
+      if (!assignedResult) {
+        showToast('⚠️ 먼저 방 배정을 해주세요!');
+        return;
+      }
+      setup.classList.add('hidden');
+      result.classList.add('visible');
+      tabs[0].classList.remove('active');
+      tabs[1].classList.add('active');
+    }
+  }
+
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2800);
+  }
+
+  init();
+</script>
+
+<div id="pwa-banner" style="display:none;position:fixed;bottom:80px;left:50%;transform:translateX(-50%);z-index:9999;background:#1a3a2a;border:1.5px solid #c9a84c;border-radius:20px;padding:14px 20px;display:flex;align-items:center;gap:12px;box-shadow:0 8px 30px rgba(0,0,0,0.4);min-width:280px;max-width:340px;">
+  <div style="width:44px;height:44px;flex-shrink:0;border-radius:12px;overflow:hidden;background:#2d5a3d;display:flex;align-items:center;justify-content:center;font-size:28px;">⛳</div>
+  <div style="flex:1;">
+    <div style="color:#c9a84c;font-size:12px;font-weight:700;letter-spacing:0.5px;">홈 화면에 추가</div>
+    <div style="color:rgba(255,255,255,0.7);font-size:11px;margin-top:2px;">아이콘을 눌러 바로 실행</div>
+  </div>
+  <button id="pwa-install-btn" style="background:#c9a84c;color:#1a3a2a;border:none;border-radius:12px;padding:8px 14px;font-weight:700;font-size:12px;cursor:pointer;white-space:nowrap;font-family:inherit;">추가</button>
+  <button onclick="document.getElementById('pwa-banner').style.display='none'" style="background:none;border:none;color:rgba(255,255,255,0.4);font-size:18px;cursor:pointer;padding:0 0 0 4px;line-height:1;">✕</button>
+</div>
+
+<!-- iOS 안내 모달 -->
+<div id="ios-guide" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.7);align-items:flex-end;justify-content:center;">
+  <div style="background:#1a3a2a;border-radius:24px 24px 0 0;padding:28px 24px 40px;width:100%;max-width:500px;border-top:2px solid #c9a84c;">
+    <div style="text-align:center;margin-bottom:20px;">
+      <div style="font-size:40px;margin-bottom:8px;">⛳</div>
+      <div style="color:#c9a84c;font-size:16px;font-weight:700;">홈 화면에 추가하기</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div style="display:flex;align-items:center;gap:14px;background:rgba(255,255,255,0.06);border-radius:14px;padding:14px;">
+        <div style="font-size:28px;flex-shrink:0;">1️⃣</div>
+        <div style="color:rgba(255,255,255,0.85);font-size:14px;line-height:1.5;">하단의 <b style="color:#c9a84c;">공유 버튼</b> 탭<br><span style="font-size:12px;color:rgba(255,255,255,0.5);">Safari 하단 중앙 □↑ 아이콘</span></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;background:rgba(255,255,255,0.06);border-radius:14px;padding:14px;">
+        <div style="font-size:28px;flex-shrink:0;">2️⃣</div>
+        <div style="color:rgba(255,255,255,0.85);font-size:14px;line-height:1.5;"><b style="color:#c9a84c;">"홈 화면에 추가"</b> 선택</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;background:rgba(255,255,255,0.06);border-radius:14px;padding:14px;">
+        <div style="font-size:28px;flex-shrink:0;">3️⃣</div>
+        <div style="color:rgba(255,255,255,0.85);font-size:14px;line-height:1.5;"><b style="color:#c9a84c;">"추가"</b> 버튼 탭</div>
+      </div>
+    </div>
+    <button onclick="document.getElementById('ios-guide').style.display='none'" style="width:100%;margin-top:20px;padding:14px;background:#c9a84c;color:#1a3a2a;border:none;border-radius:14px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;">확인</button>
+  </div>
+</div>
+<script>
+// PWA 설치 프롬프트
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  document.getElementById('pwa-banner').style.display = 'flex';
+  document.getElementById('pwa-install-btn').addEventListener('click', async () => {
+    document.getElementById('pwa-banner').style.display = 'none';
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    deferredPrompt = null;
+  });
+});
+
+// iOS 감지
+function isIOS() {
+  return /iphone|ipad|ipod/i.test(navigator.userAgent) && !window.MSStream;
+}
+function isInStandaloneMode() {
+  return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+}
+if (isIOS() && !isInStandaloneMode()) {
+  setTimeout(() => {
+    document.getElementById('ios-guide').style.display = 'flex';
+  }, 1800);
+}
+
+// 홈 화면에서 실행 시 배너 숨김
+window.addEventListener('appinstalled', () => {
+  document.getElementById('pwa-banner').style.display = 'none';
+});
+
+
+if ('serviceWorker' in navigator) {
+  const swContent = `
+self.addEventListener('install', e => self.skipWaiting());
+self.addEventListener('activate', e => clients.claim());
+self.addEventListener('fetch', e => e.respondWith(fetch(e.request).catch(() => new Response('오프라인 상태입니다.'))));
+`;
+  const blob = new Blob([swContent], {type: 'application/javascript'});
+  const swUrl = URL.createObjectURL(blob);
+  navigator.serviceWorker.register(swUrl).catch(()=>{});
+}
+
+</script></body>
+</html>
